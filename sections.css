@@ -20,7 +20,7 @@ section h2::after {
     margin: 1rem auto;
 }
 
-/* Section Événements */
+
 .events-section {
     background-color: var(--white);
 }
@@ -51,17 +51,6 @@ section h2::after {
     margin-bottom: 1.5rem;
 }
 
-.event-date {
-    display: inline-block;
-    background-color: var(--primary-blue);
-    color: var(--white);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-}
-
-/* Section Clubs */
 .clubs-section {
     background-color: var(--off-white);
 }
@@ -73,14 +62,29 @@ section h2::after {
     max-width: 1400px;
     margin: 0 auto;
 }
-
 .club-card {
-    background-color: var(--white);
-    border-radius: 15px;
+    position: relative; /* Assurez-vous que le conteneur parent a position: relative pour le positionnement absolu de la date */
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
 }
+
+.event-date {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+
+    /* Pour centrer horizontalement et positionner en bas */
+    position: absolute;
+    bottom: 1px; /* Positionner la date plus bas */
+    left: 50%; /* Positionner horizontalement au centre */
+    transform: translateX(-50%); /* Ajuste horizontalement pour centrer */
+}
+
 
 .club-card:hover {
     transform: translateY(-5px);
@@ -127,7 +131,7 @@ section h2::after {
     background-color: var(--light-blue);
 }
 
-/* Section Programmes */
+
 .programs-section {
     background-color: var(--white);
 }
@@ -186,7 +190,7 @@ section h2::after {
     left: 0;
 }
 
-/* Section Contact */
+
 .contact-section {
     background-color: var(--off-white);
 }
@@ -221,11 +225,26 @@ section h2::after {
     margin-bottom: 0.5rem;
 }
 
-.map-container {
-    height: 400px;
+.hidden {
+    display: none;
 }
 
-/* Responsive Design */
+#success-message {
+    background-color: #d4edda;
+    padding: 1rem;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+#error-message {
+    background-color: #edd4d4;
+    padding: 1rem;
+    color: #571515;
+    border: 1px solid #e6c3c3;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
 @media (max-width: 768px) {
     .contact-container {
         grid-template-columns: 1fr;
@@ -238,4 +257,4 @@ section h2::after {
     .program-grid {
         grid-template-columns: 1fr;
     }
-}
+} 

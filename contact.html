@@ -21,83 +21,85 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
     <section class="contact-section">
         <div id="contact-form-container">
             <form id="contact-form">
                 <h2>Contactez Nous </h2>
                 <label for="first-name">Nom:</label>
-                <input type="text" id="first-name" name="first-name" required>
+                <input type="text" id="first-name" name="first-name" placeholder="Nom">
         
                 <label for="last-name">Prénom:</label>
-                <input type="text" id="last-name" name="last-name" required>
+                <input type="text" id="last-name" name="last-name" placeholder="Prénom">
         
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="email">
         
                 <label for="phone">Numéro:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="phone" placeholder="Numéro">
         
                 <label for="reason">Raison de contact :</label>
-                <textarea id="reason" name="reason" required></textarea>
+                <textarea id="reason" name="reason" placeholder="Message"></textarea>
         
-                <!-- Message display area -->
-                <div id="form-message"></div>
-        
-                <!-- Submit and Annuler buttons -->
-                <button type="submit" class="submit-btn">Enregistrer</button>
+                <button type="submit" class="submit-btn">Enregistrer</button> 
                 <button type="reset" id="cancel-btn" class="cancel-btn">Annuler</button>
+                <!-- Message d'erreur -->
+                <div id="error-message" class="hidden" >
+                    Veuillez remplir tous les champs.
+                </div>
+            
+                <!-- Message de succès -->
+                <div id="success-message" class="hidden">
+                    Merci pour nous contacter, votre réponse a été enregistrée !
+                </div>
             </form>
-        </div>        
+        </div>
     </section>
+        
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div>
+            <div class="footer-content">
+                <!-- À propos de l'ESSEC -->
+                <div class="footer-about">
                     <h3>À propos de l'ESSEC Tunis</h3>
                     <p>L'ESSEC Tunis est une institution d'excellence dédiée à la formation des futurs leaders en sciences économiques et commerciales.</p>
                 </div>
-                <div>
-                    <h3>Liens rapides</h3>
-                    <ul class="footer-links">
-                        <li><a href="programmes.html">Programmes</a></li>
-                        <li><a href="evenements.html">Événements</a></li>
-                        <li><a href="clubs.html">Clubs</a></li>
-                    </ul>
-                </div>
-                <br> <br> <br>
-                <div>
+    
+                <!-- Suivez-nous (réseaux sociaux) -->
+                <div class="footer-social">
                     <h3>Suivez-nous</h3>
                     <div class="social-links">
-                        <a href="#" class="social-icon" aria-label="LinkedIn">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
+                        <a href="https://essect.rnu.tn/" target="_blank" class="social-icon" aria-label="Website">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M2 12h20"></path>
+                                <path d="M12 2a15.3 15.3 0 0 1 0 20"></path>
+                                <path d="M12 2a15.3 15.3 0 0 0 0 20"></path>
                             </svg>
                         </a>
-                        <a href="#" class="social-icon" aria-label="Instagram">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon" aria-label="Facebook">
+                        <a href="https://www.facebook.com/essec.tunis" target="_blank" class="social-icon"  aria-label="Facebook">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@essectofficiel3421" target="_blank" class="social-icon" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.54 6.42a2.79 2.79 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47a2.79 2.79 0 0 0-1.95 1.95A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .47 5.58 2.79 2.79 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.79 2.79 0 0 0 1.95-1.95A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58Z"></path>
+                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
                             </svg>
                         </a>
                     </div>
                 </div>
             </div>
+    
+            <!-- Footer bottom -->
             <div class="footer-bottom">
                 <p>&copy; 2024 ESSEC Tunis. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
-    <script src="sections.js"></script>
 
-</body>
-
+    <script src="./sections.js"></script>
+    </body>
 </html>

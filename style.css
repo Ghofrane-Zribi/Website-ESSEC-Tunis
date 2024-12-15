@@ -1,25 +1,28 @@
+/* Variables de couleur pour une utilisation cohérente */
 :root {
     --primary-blue: #003366;
     --light-blue: #0066cc;
     --white: #ffffff;
     --off-white: #f5f5f5;
-    --transition: all 0.3s ease;
+    --transition: all 0.3s ease; /* Transition fluide pour les changements d'état */
 }
 
+/* Réinitialisation globale des marges et des paddings pour tous les éléments */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Assure une taille cohérente entre les éléments */
 }
 
+/* Styles généraux du corps */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
     background-color: var(--white);
-    overflow-x: hidden;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
-/* Navbar */
+/* Styles de la barre de navigation */
 .navbar {
     background-color: var(--primary-blue);
     padding: 1rem 5%;
@@ -30,82 +33,40 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
-.logo {
-    color: var(--white);
-}
-
+/* Logo de la navigation */
 .logo h1 {
+    color: var(--white);
     font-size: 1.8rem;
-    font-weight: 700;
     margin-bottom: 0.2rem;
 }
 
-.logo p {
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-
+/* Liens de navigation */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
 }
 
 .nav-links a {
     color: var(--white);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: var(--transition);
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* Effet de transition au survol */
 }
 
-.nav-links a:hover,
-
-
-/* Hero Section */
+/* Section Hero avec image de fond */
 .hero {
-    background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)),
-                url('images/essect2.jpg') center/cover;
+    background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), url('images/essect2.jpg') center/cover;
     color: var(--white);
     text-align: center;
-    padding: 12rem 2rem 8rem;
-    position: relative;
-}
-.hero-image {
-    width: 100%; /* Resize to fit the width of the container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Make the image cover the area */
-}
-.hero-eventimage {
-    width: 75%; /* Resize to fit the width of the container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Make the image cover the area */
-    text-align: center;
+    padding: 12rem 2rem 8rem; /* Espacement en haut et en bas */
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 1s ease;
-}
-
-.hero p {
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
+/* Bouton d'appel à l'action */
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
@@ -115,16 +76,14 @@ body {
     border-radius: 50px;
     font-weight: 600;
     transition: var(--transition);
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); /* Effet de translation */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre au survol */
 }
 
-/* News Section */
+/* Section des actualités */
 .news-container {
     padding: 6rem 5%;
     background-color: var(--off-white);
@@ -135,397 +94,240 @@ body {
     color: var(--primary-blue);
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    position: relative;
 }
 
-.news-container h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--light-blue);
-    margin: 1rem auto;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
+/* Cartes d'actualités */
 .news-card {
     background-color: var(--white);
     padding: 2.5rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-}
-
-.news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.news-icon {
-    font-size: 2.5rem;
-    color: var(--light-blue);
-    margin-bottom: 1.5rem;
-}
-
-.news-card h3 {
-    color: var(--primary-blue);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.news-card p {
-    margin-bottom: 1.5rem;
-    color: #666;
-}
-
-.read-more {
-    color: var(--light-blue);
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* Ombre des cartes */
     transition: var(--transition);
 }
 
-.read-more:hover {
-    color: var(--primary-blue);
-    transform: translateX(5px);
-}
-
-/* Footer */
+/* Pied de page */
 footer {
     background-color: var(--primary-blue);
     color: var(--white);
     padding: 5rem 5% 2rem;
-    position: relative;
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.footer-section h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.footer-section h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 30px;
-    height: 2px;
-    background-color: var(--light-blue);
-}
-
-.footer-section p {
-    margin-bottom: 1rem;
-    opacity: 0.9;
-}
-
-.social-icons {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.social-icon {
-    color: var(--white);
-    text-decoration: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    font-size: 1.2rem;
-}
-
-.social-icon:hover {
-    background-color: var(--light-blue);
-    transform: translateY(-3px);
-}
-
-.google-map {
-    height: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
+/* Media Queries pour les petits écrans */
 @media (max-width: 1024px) {
     .hero h1 {
-        font-size: 3rem;
-    }
-    
-    .hero p {
-        font-size: 1.2rem;
+        font-size: 3rem; /* Réduit la taille du titre */
     }
 }
 
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        flex-direction: column; /* Aligne les éléments de la navbar verticalement */
         padding: 1rem;
     }
 
-    .logo {
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
-    }
-
-    .nav-links a {
-        display: block;
-        text-align: center;
-        padding: 0.8rem;
-    }
-
     .hero {
-        padding: 8rem 1rem 4rem;
+        padding: 8rem 1rem 4rem; /* Ajuste l'espacement de la section hero */
     }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
+    
     .news-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Cartes d'actualités en une seule colonne */
     }
 
     .footer-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Pied de page en une seule colonne */
+    }
+} 
+
+/* Styles pour le conteneur de l'image */
+.essec-image {
+    text-align: center; /* Centre l'image dans son conteneur */
+    margin: 2rem auto; /* Ajoute de l'espace autour du conteneur */
+    padding: 1rem; /* Ajoute un espacement interne */
+    max-width: 95%; /* Limite la largeur maximale du conteneur à 90% de la page */
+    border-radius: 10px; /* Arrondit les coins du conteneur */
+    overflow: hidden; /* Empêche l'image de déborder */
+}
+
+/* Styles pour l'image */
+.hero-image {
+    width: 100%; /* Ajuste la largeur de l'image pour remplir le conteneur */
+    height: auto; /* Conserve les proportions de l'image */
+    display: block; /* S'assure que l'image est un élément de bloc */
+}
+
+/* Conteneur principal des cartes */
+.card-container {
+    display: flex; /* Affiche les cartes côte à côte */
+    gap: 2rem; /* Ajoute de l'espace entre les cartes */
+    justify-content: center; /* Centre les cartes horizontalement */
+    flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
+    padding: 2rem; /* Ajoute de l'espace autour du conteneur */
+}
+
+/* Style des cartes */
+.card {
+    background-color: #ffffff; /* Couleur de fond blanche */
+    border: 1px solid #ddd; /* Bordure fine et grise */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 1.5rem; /* Espacement interne */
+    max-width: 300px; /* Largeur maximale de chaque carte */
+    text-align: center; /* Centre le texte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effets au survol */
+}
+
+/* Effets au survol ki yetada aleha el curseur tatla3 */
+.card:hover {
+    transform: translateY(-5px); /* Légère translation vers le haut */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre accentuée */
+}
+
+/* Titre des cartes */
+.card h3 {
+    font-size: 1.5rem; /* Taille du titre */
+    color: #003366; /* Couleur du texte */
+    margin-bottom: 1rem; /* Espacement sous le titre */
+}
+
+/* Paragraphe des cartes */
+.card p {
+    font-size: 1rem; /* Taille du texte */
+    color: #666; /* Couleur grise pour le texte */
+    line-height: 1.5; /* Hauteur de ligne pour lisibilité */
+}
+
+/* Conteneur principal du formulaire */
+#contact-form-container {
+    max-width: 600px; /* Largeur maximale du formulaire */
+    margin: 3rem auto; /* Centre le formulaire horizontalement et ajoute un espacement vertical */
+    padding: 2rem; /* Espacement interne */
+    background-color: #ffffff; /* Fond blanc */
+    border: 1px solid #ddd; /* Bordure fine et grise */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Titre du formulaire */
+#contact-form h2 {
+    text-align: center; /* Centre le titre */
+    font-size: 1.8rem; /* Taille du texte */
+    color: #003366; /* Couleur principale */
+    margin-bottom: 1.5rem; /* Espacement sous le titre */
+}
+
+/* Labels */
+#contact-form label {
+    display: block; /* Met chaque label sur une nouvelle ligne */
+    margin-bottom: 0.5rem; /* Espacement sous chaque label */
+    font-size: 1rem; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+}
+
+/* Champs de saisie */
+#contact-form input,
+#contact-form textarea {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 0.8rem; /* Espacement interne */
+    margin-bottom: 1rem; /* Espacement sous chaque champ */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    font-size: 1rem; /* Taille du texte */
+    box-sizing: border-box; /* Inclut la bordure dans la largeur */
+}
+
+/* Boutons */
+#contact-form .submit-btn,
+#contact-form .cancel-btn {
+    padding: 0.8rem 1.5rem; /* Espacement interne */
+    border: none; /* Supprime les bordures par défaut */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 1rem; /* Taille du texte */
+    cursor: pointer; /* Curseur en forme de main au survol */
+    transition: background-color 0.3s ease; /* Transition douce */
+}
+
+/* Bouton Enregistrer */
+#contact-form .submit-btn {
+    background-color: #0066cc; /* Couleur bleue */
+    color: #fff; /* Texte blanc */
+}
+
+#contact-form .submit-btn:hover {
+    background-color: #005bb5; /* Couleur bleue plus sombre au survol */
+}
+
+/* Bouton Annuler */
+#contact-form .cancel-btn {
+    background-color: #ddd; /* Couleur grise claire */
+    color: #333; /* Texte sombre */
+    margin-left: 1rem; /* Espacement à gauche */
+}
+
+#contact-form .cancel-btn:hover {
+    background-color: #ccc; /* Couleur grise plus sombre au survol */
+}
+/* Footer */
+.footer {
+    background-color: #003366; /* Remplacez cette couleur par la couleur de fond que vous souhaitez */
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #fff; /* Couleur du texte en blanc */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.footer-about,
+.footer-social {
+    max-width: 500px;
+}
+
+.footer-about h3, 
+.footer-social h3 {
+    margin-bottom: 0.5rem;
+    color: #fff; /* Texte blanc pour les titres */
+}
+
+.footer-about p {
+    color: #ddd; /* Texte gris clair pour le paragraphe */
+}
+
+.footer-social .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer-social .social-icon {
+    width: 24px;
+    height: 24px;
+}
+/* Icônes des réseaux sociaux en blanc */
+.footer-social .social-icon svg {
+    fill: #fff; /* Change la couleur des icônes en blanc */
+    stroke: #fff; /* Si nécessaire, assurez-vous que le contour des icônes est également blanc */
+}
+
+.footer-bottom {
+    font-size: 0.9rem;
+    color: #ddd; /* Texte gris clair pour la partie bas du footer */
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
     }
 }
-/* Why Choose ESSEC Section */
-.why-choose-essec {
-    text-align: center;
-    margin: 6rem 5%;
-    background-color: var(--off-white);
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-.why-choose-essec h2 {
-    font-size: 2.5rem;
-    color: var(--primary-blue);
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-.why-choose-essec h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--light-blue);
-    margin: 1rem auto;
-}
-
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.card {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: var(--transition);
-    width: 300px;
-}
-
-.card h3 {
-    font-size: 1.5rem;
-    color: var(--primary-blue);
-    margin-bottom: 1rem;
-}
-
-.card p {
-    font-size: 1rem;
-    color: #666;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-/* Default state: form is visible, but you can apply a smooth transition for other changes */
-#contact-form {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* If you want to use this for animations, you can fade it in if needed */
-#contact-form.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* General styles for the form container */
-#contact-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 15px;
-    background-color: #f9f9f9;
-    min-height: 100vh;
-}
-
-/* Form styling */
-#contact-form {
-    background-color: #fff;  /* White background for the form */
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
-    width: 100%;
-    max-width: 600px;  /* Limit form width */
-    font-family: 'Arial', sans-serif;
-}
-
-/* Heading for the form */
-#contact-form h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;  /* Dark text for the heading */
-}
-
-/* Style for all form labels */
-label {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #555;  /* Lighter gray for labels */
-    display: block;
-}
-
-/* Style for all form inputs and textareas */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: #f9f9f9;
-    color: #333;
-    transition: border-color 0.3s ease;
-}
-
-/* Focus effect on inputs and textarea */
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-textarea:focus {
-    border-color: #0056b3;  /* Blue border on focus */
-    outline: none;
-}
-
-/* Style for the message area */
-#form-message {
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: #333;
-    visibility: hidden;  /* Hide by default */
-    transition: opacity 0.6s ease-out;
-}
-
-/* Show the message when active */
-#form-message.show {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Submit and Annuler button styling */
-button {
-    font-family: 'Arial', sans-serif;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-/* Submit button */
-.submit-btn {
-    background-color: #0056b3;  /* Blue color */
-    color: white;
-    margin-right: 10px;
-    width: 48%;  /* Slightly smaller to fit next to Cancel */
-}
-
-.submit-btn:hover {
-    background-color: #003d7a;
-    transform: translateY(-3px);
-}
-
-/* Annuler button */
-.cancel-btn {
-    background-color: #f0f0f0;  /* Light gray */
-    color: #333;
-    border: 1px solid #ccc;
-    width: 48%;  /* Same width as submit button */
-}
-
-.cancel-btn:hover {
-    background-color: #e0e0e0;
-    transform: translateY(-3px);
-}
-
-/* Small margin between buttons */
-button:not(:last-child) {
-    margin-right: 12px;
+/* Changer la couleur du texte de la deuxième ligne en blanc */
+.logo p {
+    color: #fff; /* Change la couleur du texte en blanc */
 }
